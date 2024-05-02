@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#  2-while_best_school
+#  Written by: Ignatius K <ignatiuskisekka@gmail.com>
+
+#  A script that prints "Best School"
+#+ 10 times using "while" loop
+##############################
+
+i=1
+n=10
+while (( i<n+1 )); do
+	if [ $i -eq 4 ]; then
+		echo "bad luck"
+	elif [ $i -eq 8 ]; then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	(( i++ ))
+done
