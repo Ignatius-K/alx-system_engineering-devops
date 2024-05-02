@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#  6-superstitious_numbers
+#  Written by: Ignatius K <ignatiuskisekka@gmail.com>
+
+#  A script that displays numbers from 1 to 20
+#+ and performs some other conditions if then
+#+ number is 4, 9, or 17
+##############################################
+
+i=1
+n=20
+
+while [ $i -le $n ]; do
+	echo "$i"
+	case $i in
+		4)
+			echo "bad luck from China"
+			;;
+		9)
+			echo "bad luck from Japan"
+			;;
+		17)
+			echo "bad luck from Italy"
+			;;
+	esac
+	let "i++"
+done
