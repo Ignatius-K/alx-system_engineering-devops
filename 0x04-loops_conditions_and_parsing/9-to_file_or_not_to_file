@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#  9-to_file_or_not_to_file
+#  Written by Ignatius K <ignatiuskisekka@gmail.com>
+#
+#  A script that gives information about a file
+#+ whether it exists, contains content, or regular
+##################################################
+
+file=school
+
+if [ -a $file ]; then
+	echo "school file exists"
+	if [ ! -s $file ]; then
+		echo "school file is empty"
+	else
+		echo "school file is not empty"
+	fi
+	if [ -f $file ]; then
+		echo "school is a regular file"
+	fi
+else
+	echo "school file does not exist"
+fi
