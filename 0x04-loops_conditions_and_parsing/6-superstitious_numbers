@@ -23,5 +23,5 @@ while [ $i -le $n ]; do
 			echo "bad luck from Italy"
 			;;
 	esac
-	let "i++"
+	(( ++i ))
 done
