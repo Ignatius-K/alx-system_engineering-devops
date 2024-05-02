@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#  7-clock
+#  Written by: Ignatius K <ignatiuskisekka@gmail.com>
+#  
+#  A script displaying time for 12 hours and 59 minutes
+#+ using the "while" loop
+#######################################################
+
+TOTAL_HRS=12
+TOTAL_MINS=60
+
+i=0
+while (( i < TOTAL_HRS )); do
+	echo "Hour: $i"
+
+	j=0
+	while (( j < TOTAL_MINS )); do
+		echo "$j"
+		(( ++j ))
+	done
+
+	(( ++i ))
+done
