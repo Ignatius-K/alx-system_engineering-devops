@@ -13,7 +13,7 @@ i=0
 while (( i < TOTAL_HRS )); do
 	echo "Hour: $i"
 
-	j=0
+	j=1
 	while (( j < TOTAL_MINS )); do
 		echo "$j"
 		(( ++j ))
