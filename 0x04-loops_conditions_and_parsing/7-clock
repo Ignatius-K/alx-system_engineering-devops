@@ -10,7 +10,7 @@ TOTAL_HRS=12
 TOTAL_MINS=60
 
 i=0
-while (( i < TOTAL_HRS )); do
+while (( i <= TOTAL_HRS )); do
 	echo "Hour: $i"
 
 	j=1
