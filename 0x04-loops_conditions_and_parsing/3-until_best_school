@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#  3-until_best_school
+#  Written by Ignatius K <ignatiuskisekka@gmail.com>
+
+#  A script that use "until" loop to print
+#+ "Best School" 10 times
+##########################################
+
+n=10
+until (( i == n )); do
+	echo "Best School"
+	(( ++i ))
+done
