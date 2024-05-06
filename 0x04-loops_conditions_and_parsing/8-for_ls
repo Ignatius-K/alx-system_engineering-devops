@@ -5,8 +5,8 @@
 #  A script that displays content of current directory
 #+ in list format, only the name after first dash (-)
 #* is displayed
-#####################################################
 
-for file in `ls`; do
-	echo $file | cut -d "-" -f 2
+for file in $(ls)
+do
+	echo "$file" | cut -d "-" -f 2
 done
