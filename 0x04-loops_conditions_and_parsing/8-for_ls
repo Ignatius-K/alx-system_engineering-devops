@@ -6,7 +6,7 @@
 #+ in list format, only the name after first dash (-)
 #* is displayed
 
-for file in $(ls)
+for file in * 
 do
 	echo "$file" | cut -d "-" -f 2
 done
