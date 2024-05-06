@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#  4-to_infinity_and_beyond
+#  Written by Ignatius K <ignatiuskisekka@gmail.com>
+#
+#  Script displays text indefinitely
+
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
