@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 #  2-show_your_bash_pid
-#  Wirtten by Ignatius K <ignatiuskisekka@gmail.com>
-#  Copyright © 2024 Ignatius K
+#  shellcheck disable=SC2009
+#  Written by Ignatius K <ignatiuskisekka@gmail.com>
+#  Copyright (C) 2024 Ignatius K
 #
-#  This script lists bash-like processes
+#  This script display Bash-like processes
+#####################################
 
 ps aux -H | grep "bash"
