@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#  8-beheaded_process
+#  Written by Ignatius K <ignatiuskisekka@gmail.com>
+#  Copyright (C) 2024 Ignatius K
+#
+#  A script tnat kills "7-highlander" process
+#
+#  Requirements:
+#  	- Should stop process
+#
+#  Usage: ./8-beheaded_process
+
+pkill --signal SIGKILL -f 7-highlander
