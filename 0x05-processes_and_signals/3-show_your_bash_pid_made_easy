@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#  show_your_bash_pid_made_easy
+#  Written by Ignatius K <ignatiuskisekka@gmail.com>
+#
+#  This script shows bash-pid and process name
+
+pgrep -l bash
