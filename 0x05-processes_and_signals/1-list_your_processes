@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# 1-list_your_processes
+#  Written by Ignatius K <ignatiuskisekka@gmail.com>
+#  Copyright (C) 2024 Ignatius K
+#
+#  This script prints a list of all currently running processes
+##############################################################
+
+ps aux -H
