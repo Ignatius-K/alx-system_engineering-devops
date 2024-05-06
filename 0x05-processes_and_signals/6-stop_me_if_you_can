@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# 6-stop_me_if_you_can
+#  Written by Ignatius K <ignatiuskisekka@gmail.com>
+#
+#  Script that stops "4-to_infinity_and_beyond" process
+#
+#  Requirements:
+#   - Not allowed to use `kill` or `killall`
+
+pkill -f 4-to_infinity_and_beyond  
