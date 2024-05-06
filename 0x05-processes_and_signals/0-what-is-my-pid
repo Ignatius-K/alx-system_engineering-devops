@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#  0-what-is-my-pid
+#  Written by Ignatius K <ignatiuskisekka@gmail.com>
+#  Copyright (C) 2024 Ignatius K
+#
+#  This script prints the PID of the current process
+####################################################
+
+echo "$$"
