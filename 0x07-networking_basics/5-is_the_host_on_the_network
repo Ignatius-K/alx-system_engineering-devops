@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#  5-is_the_host_on_the_network
+#  Written by Ignatius K <ignatiuskisekka@gmail.com>
+#
+#  Script that pings an IP address
+#
+#  Requirements:
+#  	- Accepts IP address as an argument
+#  	- Ping IP 5 times
+#  	- Display helper if no argument passed
+
+if [ "$1" ]
+then
+	ping -c5 "$1"
+else
+	echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
+fi
