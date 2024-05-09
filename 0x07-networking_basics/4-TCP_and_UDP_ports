@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#  4-TCP_and_UDP_ports
+#  Written by Ignatius K <ignatiuskisekka@gmail.com>
+#
+#  Script that displays listening ports
+#
+#  Requirements:
+#   - Shows the process' ID and name to which socket belongs
+#   - Requires root privileges for efficiency
+
+sudo netstat -lp
