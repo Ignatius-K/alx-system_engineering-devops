@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#  100-port_listening_on_localhost
+#  Written by Ignatius K <ignatiuskisekka@gmail.com>
+#
+#  Script that creates a listening socket
+#
+#  Requirements:
+#  	- Socket on port 98
+#  	- Domain localhost
+
+sudo nc -l 98
