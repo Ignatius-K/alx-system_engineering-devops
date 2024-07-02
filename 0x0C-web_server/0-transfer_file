@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# 0-transfer_file
+# Written by: Ignatius K <ignatiuskisekka@gmail.com>
+#
+# Script transfer file to remote server via `scp`
+#
+# Requirements:
+# 	- Path to file to be transfered
+# 	- IP of remote server
+# 	- Username to connect with
+# 	- Path to SSH private key
+
+if [ $# -le 3 ]; then
+	echo "Usage: $0 PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+	exit 1
+fi
+
+local_file="$1"
+remote_server="$2"
+remote_user="$3"
+ssh_key="$4"
+
+scp -o IdentityFile="$ssh_key" -o StrictHostKeyChecking=no "$local_file" "$remote_user@$remote_server:~/"
