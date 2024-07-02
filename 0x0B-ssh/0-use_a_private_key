@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# 0-use_a_private_key
+# Written by: Ignatius K <ignatiuskisekka@gmail.com>
+#
+# Script that connects to server
+#
+# Requirements:
+# 	- using private key "~/.ssh/school"
+# 	- with user "ubuntu"
+
+ssh -i ~/.ssh/school ubuntu@54.167.86.169
