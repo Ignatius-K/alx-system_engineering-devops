@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# 1-create_ssh_key_pair
+# Written by Ignatius K <ignatiuskisekka@gmail.com>
+#
+# Script that generates ssh keys
+#
+# Requirements:
+# 	- key file: school
+# 	- number of bits: 4096
+# 	- passphrase: betty
+
+ssh-keygen -t rsa -b 4096 -f school -P betty
