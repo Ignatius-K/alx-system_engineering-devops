@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# 0-give_me_a_page
+# Written by Ignatius K <ignatiuskisekka@gmail.com>
+#
+# Script to get Apache run on server
+
+service apache2 restart
