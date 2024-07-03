@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# 1-install_nginx_web_server
+# Written by Ignatius K <ignatiuskisekka@gmail.com>
+#
+# Script that;
+# 	- installs and starts nginx on server
+# 	- adds redirect for page `redirect_me`
+#
+#
+# Requirement:
+# 	- utils already available; sudo, ufw
+
+apt-get update -y
+apt-get install nginx -y
+
+cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.cp
+
+echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
+
+
+# Redirection
+CONFIG_FILE=/etc/nginx/sites-available/default
+SEARCH_PATTERN="server_name _;"
+CONFIG_TO_ADD="        rewrite ^/redirect_me$ / permanent;\n"
+		
+sed -i "/$SEARCH_PATTERN/a\\$CONFIG_TO_ADD" \
+	$CONFIG_FILE
+
+service nginx restart
