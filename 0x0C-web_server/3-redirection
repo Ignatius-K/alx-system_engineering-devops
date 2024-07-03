@@ -20,8 +20,8 @@ echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
 
 # Redirection
 CONFIG_FILE=/etc/nginx/sites-available/default
-CONFIG_TO_ADD="        rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+CONFIG_TO_ADD="rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
 		
 sed -i "47i\\$CONFIG_TO_ADD" $CONFIG_FILE
 
-service nginx start
+service nginx restart
