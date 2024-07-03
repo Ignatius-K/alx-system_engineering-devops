@@ -29,7 +29,7 @@ sed -i "47i\\$CONFIG_TO_ADD" $CONFIG_FILE
 CONFIG_T0_ADD_NOT_FOUND="\terror_page 404 = @error_404;\n \
         location @error_404 {\n \
                 default_type text/html;\n \
-                return 404 \"Ceci n'est pas une page\";\n \
+                return 404 \"Ceci n'est pas une page\n\";\n \
                 internal;\n \
         }\n"
 
