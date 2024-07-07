@@ -1,1 +1,2 @@
-#!/usr/bin/env ruby\nputs ARGV[0].scan(/127.0.0.[0-9]/).join
+#!/usr/bin/env ruby
+puts ARGV[0].scan(/hbt{2,5}n/).join
