@@ -7,10 +7,16 @@ apt-get -y update
 apt-get -y install --no-install-recommends software-properties-common
 apt-get -y install haproxy=2.8.\*
 
-cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.copy
+# cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.copy
+HA_PROXY_FILE='/etc/default/haproxy'
+if [ "$(grep -Eco '^ENABLED=[01]$' < $HA_PROXY_FILE)" -gt 0 ]; then
+	sed -i 's/^ENABLED=0$/ENABLED=1/' "$HA_PROXY_FILE"
+else
+	echo 'ENABLED=1' >> $HA_PROXY_FILE
+fi
 
 echo -e '
-\nfrontend alexa_frontend
+frontend alexa_frontend
         bind *:80
         default_backend alexa_main_backend
 
@@ -20,4 +26,8 @@ backend alexa_main_backend
         server 486431-web-02 54.146.70.187:80 check
 ' >> /etc/haproxy/haproxy.cfg
 
-service haproxy restart
+if [ "$(pgrep -c haproxy)" -le 0 ]; then
+	service haproxy start
+else
+	service haproxy restart
+fi
