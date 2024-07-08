@@ -1,1 +1,38 @@
-0x0F. Load balancer
+#!/usr/bin/env bash
+# 0-custom_http_response_header
+# Written by Ignatius K <ignatiuskisekka@gmail.com>
+#
+# Script that;
+# 	- installs and starts nginx on server
+# 	- adds redirect for page `redirect_me`
+# 	- adds custom header `X-Served-By`
+
+apt-get update -y
+apt-get install nginx -y
+
+cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.cp
+
+echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
+
+
+# Redirection
+CONFIG_FILE=/etc/nginx/sites-available/default
+CONFIG_TO_ADD="rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+		
+sed -i "47i\\$CONFIG_TO_ADD" $CONFIG_FILE
+
+
+# 404 Configuration
+CONFIG_T0_ADD_NOT_FOUND="\terror_page 404 = @error_404;\n \
+        location @error_404 {\n \
+                default_type text/html;\n \
+                return 404 \"Ceci n'est pas une page\n\n\";\n \
+                internal;\n \
+        }\n"
+sed -i "48i\\$CONFIG_T0_ADD_NOT_FOUND" $CONFIG_FILE
+
+# Custom Header to indicate server performing request
+CONFIG_TO_ADD_HEADER_DIRECTIVE="\tadd_header X-Served-By \$hostname always;"
+sed -i "77i\\$CONFIG_TO_ADD_HEADER_DIRECTIVE\n" $CONFIG_FILE
+
+service nginx restart
