@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Written by Ignatius K <ignatiuskisekka@gmail.com>
+#
+# Script that configures HAProxy on Ubuntu server
+
+apt-get -y update
+apt-get -y install --no-install-recommends software-properties-common
+apt-get -y install haproxy=2.8.\*
+
+cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.copy
+
+echo -e '
+\nfrontend alexa_frontend
+        bind *:80
+        default_backend alexa_main_backend
+
+backend alexa_main_backend
+        balance roundrobin
+        server 486431-web-01 54.152.221.218:80 check
+        server 486431-web-02 54.146.70.187:80 check
+' >> /etc/haproxy/haproxy.cfg
+
+service haproxy restart
