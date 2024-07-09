@@ -8,8 +8,7 @@ CUSTOM_HEADER_CONF="error_page 404 \/custom_404.html;\n location \/redirect_me {
 DEFAULT_FILE="/etc/nginx/sites-available/default"
 
 
-host=$(hostname)
-SERVED_HEADER_CONF="server {\n\tadd_header X-Served-By $host;"
+SERVED_HEADER_CONF="server {\n\tadd_header X-Served-By \$hostname;"
 
 apt-get update -y
 apt-get install nginx -y
