@@ -1,1 +1,8 @@
-0x0E. Web stack debugging #1
+#!/usr/bin/env bash
+# 0-nginx_likes_port_80
+# Written by Ignatius K <ignatiuskisekka@gmail.com>
+#
+# Script that fixes `Server II`
+sudo apt-get update -y
+sudo apt-get install -y nginx
+sudo service nginx start
