@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """Queries API for employee tasks
 
 This module is meant to query for an employee's
