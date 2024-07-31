@@ -19,6 +19,7 @@ This file contains the following functions:
 from requests import Request, Session, exceptions, request
 import sys
 
+
 def prepare_get_employee_info_url(employee_id):
     """Prepares the employee info url
 
