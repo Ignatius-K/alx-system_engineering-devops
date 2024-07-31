@@ -17,9 +17,6 @@ Resources;
 from requests import Request, Session, exceptions, request
 import sys
 
-NUM_OF_REQUIRED_ARGS = 2
-
-
 def prepare_get_employee_info_url(employee_id: str) -> str | None:
     """Prepares the employee info url
 
@@ -96,7 +93,7 @@ def get_completed_todos(todos: list = []):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < NUM_OF_REQUIRED_ARGS:
+    if len(sys.argv) < 2:
         print(f'Usage: {sys.argv[0]} {{employee_id}}')
         exit()
 
