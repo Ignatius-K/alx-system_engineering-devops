@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
-"""Script that for given employee, shows their TODO list progress"""
+"""Module for a given employee ID, gets information about TODO list progress"""
 
-import sys
 from requests import Request, Session, exceptions, request
+import sys
 
 NUM_OF_REQUIRED_ARGS = 2
 
