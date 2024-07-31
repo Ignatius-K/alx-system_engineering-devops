@@ -19,7 +19,7 @@ This file contains the following functions:
 from requests import Request, Session, exceptions, request
 import sys
 
-def prepare_get_employee_info_url(employee_id: str) -> str | None:
+def prepare_get_employee_info_url(employee_id):
     """Prepares the employee info url
 
     Args:
@@ -34,7 +34,7 @@ def prepare_get_employee_info_url(employee_id: str) -> str | None:
     return f"https://jsonplaceholder.typicode.com/users/{employee_id}"
 
 
-def get_employee_info(employee_id: str) -> dict | None:
+def get_employee_info(employee_id):
     """Gets employee information
 
     Args:
@@ -85,7 +85,7 @@ def get_employee_todos(employee_id):
         return None
 
 
-def get_completed_todos(todos: list = []):
+def get_completed_todos(todos = []):
     """Gets completed todos
 
     Args:
