@@ -1,5 +1,19 @@
 #!/usr/bin/python3
 
+"""Queries API for employee tasks
+
+This module is meant to query for an employee's
+information and tasks done.
+
+Checks for the completed tasks and prints the completed tasks' titles
+
+Atributes:
+    NUM_OF_REQUIRED_ARGS (int): Expected number of arguments
+
+Resources;
+    * https://jsonplaceholder.typicode.com/
+
+"""
 
 from requests import Request, Session, exceptions, request
 import sys
