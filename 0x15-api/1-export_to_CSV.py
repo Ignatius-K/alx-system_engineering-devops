@@ -16,6 +16,7 @@ This file contains the following functions:
     * get_completed_todos - returns completed todos
 """
 
+import csv
 from requests import Request, Session, exceptions, request
 import sys
 
@@ -86,7 +87,7 @@ def get_employee_todos(employee_id):
         return None
 
 
-def get_completed_todos(todos = []):
+def get_completed_todos(todos=[]):
     """Gets completed todos
 
     Args:
@@ -97,6 +98,27 @@ def get_completed_todos(todos = []):
     """
 
     return [todo for todo in todos if todo.get('completed')]
+
+
+def export_to_csv(employee_id, todos=[], field_names=[]):
+    """Exports Todos to CSV
+
+    Creates a CSV file containing the Todos
+
+    Args:
+        employee_id (str): The Id of the employee
+        todos (list): Th todos to export_to_csv
+    """
+
+    with open(f'{employee_id}.csv', mode='w') as file:
+        file_writer = csv.DictWriter(
+            file,
+            field_names,
+            quoting=csv.QUOTE_ALL,
+            extrasaction='ignore'
+        )
+        for todo in todos:
+            file_writer.writerow(todo)
 
 
 if __name__ == '__main__':
@@ -114,11 +136,14 @@ if __name__ == '__main__':
             type(employee_todos) is not list):
         exit(1)
 
-    employee_completed_todos = get_completed_todos(employee_todos)
-
-    print(f'Employee {employee_info.get("name")} '
-          f'is done with tasks({len(employee_completed_todos)}/'
-          f'{len(employee_todos)}):')
-
-    for todo in employee_completed_todos:
-        print(f'\t {todo.get("title")}')
+    formatted_todos = [
+        {
+            **todo,
+            "name": employee_info.get("username")
+        } for todo in employee_todos
+    ]
+    export_to_csv(
+        employee_id,
+        formatted_todos,
+        field_names=['userId', 'name', 'completed', 'title']
+    )
