@@ -93,9 +93,9 @@ if __name__ == '__main__':
 
     employee_completed_todos = get_completed_todos(employee_todos)
 
-    print(f'Employee {employee_info.get("name")} \
-          is done with tasks({len(employee_completed_todos)} \
-          /{len(employee_todos)}):')
+    print(f'Employee {employee_info.get("name")} '
+          f'is done with tasks({len(employee_completed_todos)}/'
+          f'{len(employee_todos)}):')
 
     for todo in employee_completed_todos:
         print(f'\t {todo.get("title")}')
