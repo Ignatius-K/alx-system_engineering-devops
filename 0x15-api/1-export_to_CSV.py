@@ -11,7 +11,6 @@ Atributes:
 
 Resources;
     * https://jsonplaceholder.typicode.com/
-
 """
 
 from requests import Request, Session, exceptions, request
@@ -26,6 +25,7 @@ def prepare_get_employee_info_url(employee_id: str) -> str | None:
     Returns:
         (str): The url
     """
+
     if employee_id is None:
         return None
     return f"https://jsonplaceholder.typicode.com/users/{employee_id}"
@@ -40,6 +40,7 @@ def get_employee_info(employee_id: str) -> dict | None:
     Returns:
         (dict): The employee details
     """
+
     request = Request(
         method="get",
         url=prepare_get_employee_info_url(employee_id)
@@ -65,6 +66,7 @@ def get_employee_todos(employee_id):
     Returns:
         API response
     """
+
     url = f"https://jsonplaceholder.typicode.com/todos"
 
     request = Request(method="get", url=url, params={"userId": employee_id})
@@ -89,11 +91,11 @@ def get_completed_todos(todos: list = []):
     Returns:
         (list): completed todos
     """
+
     return [todo for todo in todos if todo.get('completed')]
 
 
 if __name__ == '__main__':
-    """Module for the main"""
     if len(sys.argv) < 2:
         print(f'Usage: {sys.argv[0]} {{employee_id}}')
         exit()
