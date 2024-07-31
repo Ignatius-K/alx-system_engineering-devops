@@ -21,7 +21,14 @@ NUM_OF_REQUIRED_ARGS = 2
 
 
 def prepare_get_employee_info_url(employee_id: str) -> str | None:
-    """Prepares the employee info url"""
+    """Prepares the employee info url
+
+    Args:
+        employee_id (str): The id of employee
+
+    Returns:
+        (str): The url
+    """
     if employee_id is None:
         return None
     return f"https://jsonplaceholder.typicode.com/users/{employee_id}"
