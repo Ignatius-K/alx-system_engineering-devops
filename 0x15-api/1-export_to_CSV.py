@@ -93,6 +93,7 @@ def get_completed_todos(todos: list = []):
 
 
 if __name__ == '__main__':
+    """Module for the main"""
     if len(sys.argv) < 2:
         print(f'Usage: {sys.argv[0]} {{employee_id}}')
         exit()
