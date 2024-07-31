@@ -150,9 +150,5 @@ if __name__ == '__main__':
 
         employee_info = get_employee_info(employee_id)
         employee_todos = get_employee_todos(employee_id)
-        if (employee_info is None or
-                employee_todos is None or
-                type(employee_todos) is not list):
-            continue
         data[employee_id] = format_todos(employee_todos, employee_info)
     export_to_json('todo_all_employees.json', data)
