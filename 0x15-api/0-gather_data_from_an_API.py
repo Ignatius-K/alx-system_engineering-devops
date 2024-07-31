@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-"""Module for a given employee ID, gets information about TODO list progress"""
 
 from requests import Request, Session, exceptions, request
 import sys
