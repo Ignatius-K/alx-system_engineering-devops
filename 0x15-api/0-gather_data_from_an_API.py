@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Module returns for a given employee ID."""
+
 import requests
 import sys
 
