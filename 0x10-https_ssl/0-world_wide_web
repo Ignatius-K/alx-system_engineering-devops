@@ -1,0 +1,40 @@
+#!/bin/bash
+# 0-world_wide_web
+# Written by Ignatius K <ignatiuskisekka@gmail.com>
+#
+# Script gets the DNS record information for a given subdomain
+
+get_dns_info() {
+  local subdomain=$1
+  local domain=$2
+  local result
+
+  result=$(dig "${subdomain}.${domain}" +short)
+  if [[ -z "$result" ]]; then
+    echo "The subdomain ${subdomain} does not have any DNS records."
+    return
+  fi
+
+  record_type="A"
+  destination=$(echo "$result" | awk 'NR==1{print $1}')
+
+  echo "The subdomain ${subdomain} is a ${record_type} record and points to ${destination}"
+}
+
+# Check if at least one argument is provided
+if [[ -z "$1" ]]; then
+  echo "Usage: $0 domain [subdomain]"
+  exit 1
+fi
+
+domain=$1
+
+# check if both domain and sub-domain are provided
+if [[ -n "$2" ]]; then
+  subdomain=$2
+  get_dns_info "$subdomain" "$domain"
+else
+  for sub in www lb-01 web-01 web-02; do
+    get_dns_info "$sub" "$domain"
+  done
+fi
