@@ -1,0 +1,8 @@
+sudo ufw install -y ufw
+
+sudo ufw default allow incoming
+sudo ufw default deny incoming
+
+sudo ufw allow 22
+sudo ufw allow 80
+sudo ufw allow 443
