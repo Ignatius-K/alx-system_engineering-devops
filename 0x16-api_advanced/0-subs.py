@@ -22,6 +22,9 @@ def number_of_subscribers(subreddit):
     )
 
     session = Session()
+    session.headers.update({
+        'User-agent': 'Linux/5.4.0 MyRedditApp/2.3 (by /u/natius-k)'
+    })
     preparedrequest = session.prepare_request(request)
     subscribers = 0
 
