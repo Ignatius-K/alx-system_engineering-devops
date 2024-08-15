@@ -5,7 +5,8 @@ import requests
 
 
 def number_of_subscribers(subreddit):
-    """Gets subscribers on given reddit"""
+    """Gets subscribers on given reddit
+    """
     url = f'https://www.reddit.com/r/{subreddit}/about.json'
     headers = {
         "User-Agent": "linux:5.0 (by /u/natius)"
