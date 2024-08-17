@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# 0-iamsomeoneelse
+#
+# Script that executes `whoami`
+# based on supplied user
+
+if [ $# -lt 1 ]; then
+	echo "Usage: 1 argument required"
+	exit 1
+fi
+
+su "$1" -c 'whoami'
