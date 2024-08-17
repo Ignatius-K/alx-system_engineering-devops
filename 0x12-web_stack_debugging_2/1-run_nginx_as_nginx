@@ -1,1 +1,15 @@
 #!/usr/bin/env bash
+# 1-run_nginx_as_nginx
+#
+# Script that fixes this container
+# so that Nginx is running as the nginx user
+#
+# Requirements:
+# 	- nginx must be running as nginx user
+# 	- nginx must be running as nginx user
+
+chmod 644 /etc/nginx/nginx.conf
+sed -Ei 's/\s*#?\s*user .*/user nginx;/' /etc/nginx/nginx.conf
+sed -Ei 's/(listen (\[::\]:)?80) /\180 /' /etc/nginx/sites-enabled/default
+pkill apache2
+su nginx -s /bin/bash -c 'service nginx restart'
