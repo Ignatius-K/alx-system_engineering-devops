@@ -9,4 +9,4 @@ if [ $# -lt 1 ]; then
 	exit 1
 fi
 
-su "$1" -c 'whoami'
+runuser "$1" -s "$SHELL" -c "whoami"
