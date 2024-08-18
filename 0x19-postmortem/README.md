@@ -1,17 +1,17 @@
 # 19-August-2024: Company Website Failure Review
 
 ## Summary about the incident
-The company website failed from **19-08-2024 00:10 EAT** to **19-08-2024 01:40 EAT**.
-The website was not accessible, all users who tried to access the site encountered
+The company website failed from **19-08-2024 00:10 EAT** to **19-08-2024 01:40 EAT**.\
+The website was not accessible, all users who tried to access the site encountered 
 a **500 Internal Server Error page**.
 This was due to a file not being pushed in the new website version.
 
 ## Timeline of the incident
 **00:10 EAT** - Customer reaches out via company email expressing how they can't
-                access the site
-**00:11 EAT** - We, the Technical team are notified about the issue
+                access the site\
+**00:11 EAT** - We, the Technical team are notified about the issue.\
 **00:15 EAT** - Assumptions are made on the root cause of the issue, checks are made
-                on the server and system
+                on the server and system.\
                 The web service was checked, to ensure its running
                 The service's status was checked, but it was running and ok
                 The service was restarted, to check if the issue is consistent and the
