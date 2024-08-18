@@ -19,7 +19,7 @@ This was due to a file not being pushed in the new website version.
 **01:36 EAT** - Using **strace**, the service process was monitored, and cause of issue was
                 attained and resolved\
 **01:38 EAT** - Puppet mainfest file containing the fix was deployed on master server and
-                applied across all servers
+                applied across all servers.
 
 ## Root cause of the incident
 During development, a file with an extension of ".phpp" was being used and was being
@@ -32,7 +32,7 @@ Hence, when deployed the file with ".phpp" was not accessible to the web server 
 ## Resolution
 A puppet manifest file was written with fix and pushed to the master server.\
 Then, by puppet's power the fix was applied to all other servers.\
-The fix involved moving the file with ".php" extension to the required one ".phpp"\
+The fix involved moving the file with ".php" extension to the required one ".phpp"
 
 ## Preventative measures recommended
 - The "file validator" should be redesigned to be interactive
