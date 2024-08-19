@@ -6,7 +6,7 @@ The website was not accessible, all users who tried to access the site encounter
 a **500 Internal Server Error page**.\
 This was due to a file not being pushed in the new website version.
 
-![We messed up](https://twitter.com/devopsreact/status/834887829486399488)
+![We messed up](https://i.pinimg.com/originals/16/69/8b/16698bc7002f93dfac8eb6d4451f9e35.jpg)
 
 ## Timeline of the incident
 **00:10 EAT** - Customer reaches out via company email expressing how they can't
