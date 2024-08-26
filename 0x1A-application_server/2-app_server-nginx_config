@@ -1,0 +1,23 @@
+# Nginx - Application server setup
+
+upstream app_server_hbnb {                                                          
+        server localhost:5000 fail_timeout=0;                                        
+}                                                                                    
+
+server {                                                                             
+        listen 80 default_server;                                                    
+        listen [::]:80 default_server;                                               
+                                                                                     
+        location / {                                                                 
+                # Check if the request is for a static file
+                try_files $uri @app_server_hbnb;
+        }
+
+        location @app_server_hbnb {
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;         
+                proxy_set_header Host $http_host;                                    
+                proxy_redirect off;                                                  
+                proxy_pass http://app_server_hbnb; 
+        }
+}     
+
