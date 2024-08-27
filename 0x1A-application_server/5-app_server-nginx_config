@@ -25,6 +25,7 @@ server {
                                                                                      
         location / {                                                                 
                 # Check if the request is for a static file
+                rewrite ^/$ /2-hbnb/ rewrite;
                 try_files $uri @app_server_hbnb_web;
         }
 
